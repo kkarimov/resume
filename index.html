@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karim Salta - Resume</title>
     <style>
+
+    /* Стили для переключателя языков */
+    .lang-switcher {
+        text-align: right; /* Положение кнопок справа */
+        margin-bottom: 20px;
+    }
+    .lang-switcher button {
+        cursor: pointer;
+        padding: 5px 15px;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: 0.2s;
+    }
+    .lang-switcher button:hover {
+        background-color: #e0e0e0;
+    }
+    /* Активная кнопка (выбранный язык) */
+    .lang-switcher button.active {
+        background-color: #333;
+        color: #fff;
+        border-color: #333;
+    }
+    
+    /* Скрываем английскую версию по умолчанию */
+    #content-en {
+        display: none; 
+    }
+
         /* BASE STYLES */
         body {
             font-family: 'Arial', 'Helvetica Neue', sans-serif;
@@ -166,6 +197,358 @@
 </head>
 <body>
 
+    <!-- Переключатель -->
+    <div class="lang-switcher">
+        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+
+    <!-- РУССКАЯ ВЕРСИЯ (по умолчанию видима) -->
+    <div id="content-ru">
+        <!-- ВСТАВЬТЕ СЮДА ВЕСЬ ПЕРЕВЕДЕННЫЙ НА РУССКИЙ HTML-КОД -->
+        <!-- (включая новые добавленные блоки и секции) -->
+        
+<header>
+    <h1>КАРИМ КАРИМОВ</h1>
+    <div class="roles">Исследователь / Инженер в области машинного обучения | Data Scientist | ML/DL-engineer</div>
+    <div class="contact-info">
+        kkarimov@gmail.com | +7 925 905-44-31 | Москва, Россия | Готов к переезду<br>
+        <a href="https://www.linkedin.com/in/karim-karimov-b47052206/" target="_blank">Линкедин</a> | 
+        <a href="https://scholar.google.com/citations?user=fA1uKokAAAAJ&hl=en" target="_blank">Список публикаций (неполный)</a> | 
+        <a href="https://github.com/kkarimov" target="_blank">GitHub</a> | 
+        <a href="https://www.cryptotube.app/" target="_blank">Последний проект</a>
+    </div>
+</header>
+
+<section>
+    <h2>ОБО МНЕ</h2>
+    <p>
+        Недавно получил степень доктора философии (PhD) (январь 2025 г.) по прикладной математике. Имею более 7 лет опыта исследований в области машинного обучения (ML): разработка ML-моделей, проведение исследований и быстрое прототипирование экспериментальных идей для реальных задач. Обладаю сильной базой в линейной алгебре и фреймворках машинного и глубокого обучения (ML/DL); моя ключевая компетенция — применение передовых научных исследований для создания рабочих продуктов с базовым уровнем функционала (прототипов) с приоритетом на сроки и гибкость. Есть опыт работы с гиперспектральными данными (геномика, изображения, видео, снимки из космоса), подходами мульти-модального и многозадачного обучения, а также межфункционального взаимодействия в рамках проектов, финансируемых DARPA и NSF. Публикующийся исследователь (IEEE, ICCS, Frontiers in AI) с подтвержденным опытом полного цикла работы: от исследовательских концептов и проведения экспериментов до внедрения (deployment). Гибкий и адаптивный при решении неоднозначных проблем и создании новаторских решений, основатель собственной програмного продукта (SAAS) в области Искусственного Интеллекта.
+    </p>
+</section>
+
+<section>
+    <h2>НАВЫКИ</h2>
+    <table class="skills-table">
+        <tr>
+            <td class="skill-cat">Математические основы:</td>
+            <td>Линейная алгебра, Теория оптимизации, Численные методы, Вычислительная эффективность</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Программирование и ML/DL:</td>
+            <td>Python (8+ лет), PyTorch, Jupyter, NumPy, Pandas, Scikit-learn, SciPy, R (базовый), Bash/Unix</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Распределенные вычисления:</td>
+            <td>Обучение на нескольких GPU (PyTorch DDP), Распределенные системы (Slurm, Ray), Облачные вычисления (GCP)</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Визуализация данных:</td>
+            <td>Matplotlib, Seaborn, Plotly, NetworkX, LaTeX, Beamer</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Инфраструктура данных:</td>
+            <td>SQL (PostgreSQL, Supabase), NoSQL (MongoDB, Redis), Cloud Storage, ETL, Интеллектуальный анализ/сбор данных (Selenium, Playwright, Rapid APIs), Конвейеры данных реального времени</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Gen AI/Агенты:</td>
+            <td>Интеграция LLM (OpenAI, Anthropic), Pydantic, Векторные базы данных (Qdrant), RAG, Model Context Protocol (FastAPI-MCP), Prompt Engineering, LiveKit</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Продакшн и развертывание:</td>
+            <td>GitHub, Hugging Face, Облачные вычисления (GCP, Hetzner, IONOS), Docker, FastAPI, RESTful APIs, NGINX, Caddy, JWT</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Направления ML/DL:</td>
+            <td>Снижение размерности, Классификация, Кластеризация, Извлечение признаков, Спарификация (Sparsification), Обучение представлениям (Representation Learning), Многодоменное и многозадачное обучение</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Исследования:</td>
+            <td>Предварительный анализ данных (EDA), Планирование экспериментов, Быстрое прототипирование, Оценка моделей, Бенчмаркинг</td>
+        </tr>
+        <tr>
+            <td class="skill-cat">Сотрудничество:</td>
+            <td>Межфункциональное взаимодействие (взаимодействие с экспертами в различных областях), Презентация данных в контексте задач (Data Storytelling), Техническая документация</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>ОБРАЗОВАНИЕ</h2>
+    <div class="entry">
+        <div class="entry-header">
+            <span class="job-title">Доктор Филисофии по Прикладной Математике (PhD in Applied Math)</span>
+            <span class="dates">Сент 2017 – Янв 2025</span>
+        </div>
+        <div class="company-row">
+            <span>Университет штата Колорадо (Colorado State University)</span>
+            <span>Форт-Коллинс, Колорадо</span>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="entry-header">
+            <span class="job-title">Специалист по специальности физика (Master of Science in Physics)</span>
+            <span class="dates">Сент 1998 – Янв 2005</span>
+        </div>
+        <div class="company-row">
+            <span>Московский государственный университет (МГУ им. М.В. Ломоносова), Физический факультет (с отличием)</span>
+            <span>Москва, Россия</span>
+        </div>
+    </div>
+    
+<div class="entry">
+    <div class="entry-header">
+        <span class="job-title">Получен сертификат</span>
+        <span class="dates">Сент 2004 – Дек 2004</span>
+    </div>
+    <div class="company-row">
+        <span><a href="http://kitaygorodskaya.ru" target="_blank">Школа интенсивного изучения иностранных языков Китайгородской</a> при МГУ им. М.В. Ломоносова</span>
+        <span>Москва, Россия</span>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="job-title">Слушатель курсов (немецкий язык, история и культура)</span>
+        <span class="dates">Сент 2000 – Сент 2001</span>
+    </div>
+    <div class="company-row">
+        <span><a href="http://rgi.msu.ru/" target="_blank">Русско-германский институт науки и культуры</a> при МГУ</span>
+        <span>Москва, Россия</span>
+    </div>
+</div>
+
+</section>
+
+<section>
+    <h2>ОПЫТ РАБОТЫ</h2>
+
+    <!-- JOB 1 -->
+    <div class="entry">
+        <div class="entry-header">
+            <span class="job-title">Научный сотрудник-докторант</span>
+            <span class="dates">Янв 2022 – Янв 2025</span>
+        </div>
+        <div class="company-row">
+            <span><a href="https://www.math.colostate.edu/~kirby/PALindex.html" target="_blank">Лаборатория анализа паттернов (Pattern Analysis Lab)</a>, Университет штата Колорадо</span>
+            <span>Форт-Коллинс, Колорадо</span>
+        </div>
+        <p>Разработал несколько новых алгоритмов в области геометрического глубокого обучения и биоинформатики, включая саммые эффективные в своей категории на момент исследования (SOTA). Следуя принятому в лаборатории подходу разработки «с нуля», ориентированному на глубокое понимание и интерпретируемость, реализовал множество существующих алгоритмов ML полностью с нуля на базе исследовательских статей.</p>
+
+        <div class="project-group">
+            <span class="project-title">Геометрическое глубокое обучение:</span>
+            <span class="funding-note">Частично профинансировано <a href="https://sam.gov/opp/761a5bea003a437e9001fa7c26febf2b/view" target="_blank">программой DARPA "Geometries of Learning"</a> и <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2428052&HistoricalAwards=false" target="_blank">грантом NSF</a></span>
+            <ul>
+                <li>Создал нейронные подсети, работающие на многообразиях Грассмана (узел 'SVFB'), расширяющие применимость существующих методов DL к более высоким математическим абстракциям, например, классификация векторов → классификация подпространств (<a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2023.1274830/full" target="_blank">публикация в Frontiers in AI</a>)</li>
+                <li>Разработал новый SOTA-метод кластеризации для наборов датасетов/гиперспектральных данных (например, наборов изображений и видео, данных дистанционного зондирования, геномики): алгоритм Линде-Бузо-Грея (LBG) на многообразии Грассмана с использованием нового абстрактного узла 'SVBF' (представлено на CVPR, положительные отзывы, работа была на грани принятия)(<a href="https://arxiv.org/abs/2512.23766" target="_blank">Препринт</a>)</li></li>
+                <li>Разработал новый алгоритм вычисления геодезических на многообразии флагов для выравнивания доменов (domain alignment) с использованием кастомного обучаемого абстрактного узла, встроенного в более крупные сети (не опубликован, так как оказался слишком вычислительно затратным для реальных данных)</li>
+                <li>Разработал новый метод анализа подпространств для кластеризации на многослойных графах (не опубликован, так как разрабатывался для Zoetis R&D на закрытых проприетарных данных)</li>
+            </ul>
+        </div>
+
+        <div class="project-group">
+            <span class="project-title">Биоинформатика:</span>
+            <span class="funding-note">В сотрудничестве с биостатистиками и профильными экспертами по проекту <a href="https://www.darpa.mil/research/programs/prometheus" target="_blank">DARPA Prometheus</a> совместно с <a href="https://www.zoetis.com/products-and-science/research-development" target="_blank">Zoetis R&D</a> или независимо</span>
+            <ul>
+                <li>Разработал рабочие процессы предварительной обработки данных и извлечения признаков для высокоразмерных датасетов (10 000+ признаков)</li>
+                <li>Построил разнообразные конвейеры EDA, объединяющие и предварительно обрабатывающие данные из различных источников/модальностей; спроектировал конвейеры, позволяющие формировать кросс-доменные представления</li>
+                <li>Создал автоматизированные конвейеры обучения моделей глубокого обучения на биологических данных с использованием распределенного обучения на нескольких GPU через Ray и Slurm</li>
+                <li>Написал кастомную утилиту мультипроцессинга для PyTorch, которая работает быстрее встроенного модуля 'torch.multiprocessing'</li>
+                <li>Написал с нуля множество алгоритмов извлечения признаков, включая новый Python-пакет для алгоритма Penalized Fisher's LDA (<a href="https://ieeexplore.ieee.org/abstract/document/10385473" target="_blank">публикация в IEEE</a>)</li>
+                <li>Спроектировал новую композитную архитектуру нейронной сети, объединяющую несколько подсетей (Спарсификатор, Классификатор и VAE), с одновременным обучением на высокоразмерных геномных данных из нескольких доменов (<a href="https://link.springer.com/chapter/10.1007/978-3-031-63772-8_3" target="_blank">публикация в ICCS</a>)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JOB 2 -->
+    <div class="entry">
+        <div class="entry-header">
+            <span class="job-title">Основатель компании / Инженер платформ машинного обучения(Индивидуальный проект)</span>
+            <span class="dates">Март 2025 – Окт 2025</span>
+        </div>
+        <div class="company-row">
+            <span><a href="https://www.cryptotube.app/" target="_blank">CryptoTube.app</a></span>
+            <span>Удаленно</span>
+        </div>
+        <p>Спроектировал, разработал и развернул full-stack приложение на базе машинного обучения полностью в одиночку, интегрировав конвейеры данных реального времени с API больших языковых моделей (API LLM).</p>
+        <ol style="margin-top: 4px; margin-bottom: 4px; margin-left: 20px;">
+            <li><strong>Реализовал сборщики/майнеры данных в реальном времени</strong> через агрегацию на Python из API, RSS-лент и кастомных парсеров для интеллектуального анализа данных</li>
+            <li><strong>Организовал асинхронный конвейер обогащения данных</strong>, используя:
+                <ul style="margin-bottom: 0;">
+                    <li>Интегрированные API LLM наряду с prompt-инжинирингом и моделями Pydantic для надежного извлечения знаний</li>
+                    <li>Redis для кэширования/очередей, MongoDB для постоянного хранения и удаленный файловый сервер за Caddy для статических файлов</li>
+                    <li>API LLM для функционала чата с корректной обработкой ошибок и мониторингом</li>
+                </ul>
+            </li>
+            <li><strong>Создал FastAPI-приложение с JWT-аутентификацией</strong>, обслуживающее frontend на основе подписки с многоуровневым контролем доступа</li>
+            <li><strong>Разработал (vibe-coding) приложение на Next.js</strong> для улучшения пользовательского интерфейса</li>
+            <li><strong>Интегрировал платежную систему и база данных пользователей использующих продукт на базе подписок</li>
+        </ol>
+        <p style="font-style: italic;"><strong>В настоящее время реализую:</strong> RAG с Qdrant и сервисы MCP с использованием FastAPI-MCP для агентных интеграций</p>
+    </div>
+
+    <!-- JOB 3 -->
+    <div class="entry">
+        <div class="entry-header">
+            <span class="job-title">Преподаватель</span>
+            <span class="dates">Сент 2017 – Дек 2021</span>
+        </div>
+        <div class="company-row">
+            <span>Университет штата Колорадо, Математический факультет</span>
+            <span>Форт-Коллинс, Колорадо</span>
+        </div>
+        <ul>
+            <li>Разрабатывал учебные программы и материалы для оценки знаний по математическим курсам, включая обыкновенные дифференциальные уравнения, математический анализ для физиков и математический анализ для биологов.</li>
+            <li>Преподавал математику аудитории из более чем 200 студентов, демонстрируя способность адаптировать технический материал как для технических, так и для нетехнических специалистов, а также сильные навыки устной и письменной коммуникации.</li>
+        </ul>
+    </div>
+
+    <!-- JOB 4 -->
+    <div class="entry">
+        <div class="entry-header">
+            <span class="job-title">Научный сотрудник</span>
+            <span class="dates">Апр 2009 – Дек 2015</span>
+        </div>
+        <div class="company-row">
+            <span>Дагестанский государственный университет, Математический факультет</span>
+            <span>Россия</span>
+        </div>
+        <p>Исследования в области томографии с использованием математического моделирования и компьютерных экспериментов, написание статей, участие в конференциях. Руководитель 1-го и основной участник 2-х проектов, финансируемых Российским Фондом Фундаментальных Исследований (РФФИ).</p>
+    </div>
+    
+<div class="entry">
+    <div class="entry-header">
+        <span class="job-title">Специалист по интернет-операциям</span>
+        <span class="dates">Июль 2007 – Нояб 2008</span>
+    </div>
+    <div class="company-row">
+        <span><a href="https://www.alfadirect.ru/" target="_blank">Альфа-Банк</a>, Управление Рынков и Акций (Брокерское и доверительное управление)</span>
+        <span>Москва, Россия</span>
+    </div>
+    <p>Контроль клиентских операций, поддержка клиентов, расчет рисков и маржи, разработка полуавтоматизированных торговых алгоритмов, операции REPO, участие в развитии Учебного центра.</p>
+</div>
+
+<div class="entry">
+    <div class="entry-header">
+        <span class="job-title">Частный преподаватель (Репетитор)</span>
+        <span class="dates">Сент 2003 – Июнь 2016</span>
+    </div>
+    <div class="company-row">
+        <span>Репетитор</span>
+        <span>Россия</span>
+    </div>
+    <p>Преподавание студентам бакалавриата следующих дисциплин: математический анализ, линейная алгебра, теория вероятностей и математическая статистика, теория игр, линейное программирование.</p>
+</div>
+</section>
+
+<section>
+    <h2>ПОСЛЕДНИЕ ПУБЛИКАЦИИ</h2>
+    <div class="pub-entry">
+        <div class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10385473" target="_blank">Разреженный линейный центроидный кодировщик: Инструмент отбора биомаркеров для высокоразмерных биологических данных</a></div>
+        <div>Международная конференция IEEE по биоинформатике и биомедицине (BIBM), Стамбул, Турция, декабрь 2024 г.</div>
+    </div>
+    <div class="pub-entry">
+        <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-63772-8_3" target="_blank">Многодоменный и многозадачный подход к отбору характерных признаков из массивов данных РНК</a></div>
+        <div>24-я Международная конференция по вычислительной науке (ICCS), Малага, Испания, июль 2024 г.</div>
+    </div>
+    <div class="pub-entry">
+        <div class="pub-title"><a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2023.1274830/full" target="_blank">Алгоритм вычисления многообразий Шуберта наилучшего соответствия с приложениями</a></div>
+        <div>Frontiers in Artificial Intelligence: Machine Learning and Artificial Intelligence, ноябрь 2023 г.</div>
+    </div>
+</section>
+
+<section>
+    <h2>АЛГОРИТМЫ И СИСТЕМЫ, С КОТОРЫМИ Я ГЛУБОКО ЗНАКОМ</h2>
+    <p>Следуя подходу разработки «с нуля» в нашей лаборатории, я написал множество существующих и новых алгоритмов машинного и глубокого обучения (ML/DL) полностью с нуля (основываясь исключительно на публикациях):</p>
+    <div class="algo-grid">
+        <div>
+            <strong>Нейронные сети на PyTorch:</strong>
+            <ul>
+                <li>LSTM (<a href="https://github.com/kkarimov/LSTM" target="_blank">код на GitHub</a>)</li>
+                <li>Обучение с подкреплением (env & Q-network) (<a href=" target="_blank">визуализация обучения</a>)</li>
+                <li>Сверточные нейронные сети, Автоэнкодеры, Вариационные Автоэкодеры</li>
+                <li>Разнообразные функции потерь и методы обучения</li>
+            </ul>
+        </div>
+        <div>
+            <strong>Классическое ML:</strong>
+            <ul>
+                <li>PCA, k-means, LDA, CCA, SVM, MFA</li>
+                <li>Самоорганизующиеся карты (Self-Organizing Maps)</li>
+                <li>Алгоритмы адаптации домена (Limma, CORAL)</li>
+                <li>Фильтры Калмана (Kalman filters)</li>
+                <li>Различные методы нормализации и статистические показатели</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Прочие КОНКУРСЫ / ГРАНТЫ / Воркшопы</h2>
+    <ul style="margin-top: 10px; padding-left: 20px; line-height: 1.5;">
+        <li style="margin-bottom: 8px;">
+            <strong>Июль 2018:</strong> Воркшоп «Топология и Машинное обучение», ICERM / Провиденс / Род-Айленд / США. 
+            <a href="https://icerm.brown.edu/tripods/tri18-2-tml/" target="_blank">Сайт</a>
+        </li>
+        <li style="margin-bottom: 8px;">
+            <strong>Июнь 2018:</strong> Воркшоп «Репрезентации высоко-размерных данных», MSRI / Беркли / Калифорния / США. 
+            <a href="http://www.msri.org/summer_schools/827" target="_blank">Сайт</a>
+        </li>
+        <li style="margin-bottom: 8px;">
+            <strong>Январь 2012 – Декабрь 2014:</strong> Грант Российского фонда фундаментальных исследований (РФФИ), <i>«Математическое моделирование и разработка методов томографической фазовой диагностики среды»</i>. Исполнитель (выигран в составе группы). 
+            <a href="https://www.rfbr.ru/rffi/eng" target="_blank">Сайт</a>
+        </li>
+        <li style="margin-bottom: 8px;">
+            <strong>Январь 2011 – Декабрь 2013:</strong> Грант Российского фонда фундаментальных исследований (РФФИ), <i>«Математическое моделирование реконструктивной томографии на основе диагностических измерительно-вычислительных систем, имеющих гауссову форму»</i>. Исполнитель (выигран в составе группы). 
+            <a href="https://www.rfbr.ru/rffi/eng" target="_blank">Сайт</a>
+        </li>
+        <li style="margin-bottom: 8px;">
+            <strong>Июль 2011 – Декабрь 2011:</strong> Грант Российского фонда фундаментальных исследований (РФФИ), <i>«Математическое моделирование и вычислительный эксперимент в томографической диагностике»</i>. Руководитель (выигран индивидуально). 
+            <a href="https://www.rfbr.ru/rffi/eng" target="_blank">Сайт</a>
+        </li>
+        <li style="margin-bottom: 8px;">
+            <strong>Сентябрь 2004 – Декабрь 2004:</strong> Финансирование от МГУ им. М.В. Ломоносова на обучение в Школе интенсивного изучения иностранных языков Китайгородской при МГУ.
+        </li>
+        <li style="margin-bottom: 8px;">
+            <strong>Апрель 1998:</strong> Призер Всероссийской олимпиады по физике и математике, проводимой МГУ им. М.В. Ломоносова, по итогам которой был зачислен на полностью финансируемую (бюджетную) программу обучения по физике.
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ</h2>
+    <table style="width:100%; border-collapse: collapse; font-size: 9.5pt;">
+        <tr>
+            <td style="width: 15%; font-weight: 700;">Языки:</td>
+            <td>Английский (Свободное владение), Русский (Родной)</td>
+        </tr>
+        <tr>
+            <td style="font-weight: 700;">Гражданство:</td>
+            <td>Российская Федерация</td>
+        </tr>
+        <tr>
+            <td style="font-weight: 700;">Разрешение на работу:</td>
+            <td>В России</td>
+        </tr>
+        <tr>
+            <td style="font-weight: 700;">Готовность приступить к работе:</td>
+            <td>Немедленно</td>
+        </tr>
+        <tr>
+            <td style="font-weight: 700; vertical-align: top;">Ключевые сильные стороны:</td>
+            <td style="font-style: italic;">«Карим обладает редкой способностью трансформировать сложные абстрактные концепции и математические модели в эффективные, масштабируемые программные решения; он очень уверенно переходит от глубокого анализа к практической реализации». — Со-руководитель, Крис Питерсон (Chris Peterson)</td>
+        </tr>
+    </table>
+</section>
+        
+        
+    </div>
+
+    <!-- АНГЛИЙСКАЯ ВЕРСИЯ (по умолчанию скрыта) -->
+    <div id="content-en">
+        <!-- ВСТАВЬТЕ СЮДА ВАШ ИСХОДНЫЙ АНГЛИЙСКИЙ HTML-КОД -->
+        
+        
     <header>
         <h1>KARIM SALTA (KARIMOV)</h1>
         <div class="roles">Data Scientist | Machine Learning Researcher | ML Engineer</div>
@@ -415,6 +798,34 @@
             </tr>
         </table>
     </section>
+        
+        
+    </div>
+
+    <!-- Скрипт переключения (разместите перед закрывающим тегом </body>) -->
+    <script>
+        function setLang(lang) {
+            // Элементы контента
+            const contentRu = document.getElementById('content-ru');
+            const contentEn = document.getElementById('content-en');
+            // Кнопки
+            const btnRu = document.getElementById('btn-ru');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'ru') {
+                contentRu.style.display = 'block';
+                contentEn.style.display = 'none';
+                btnRu.classList.add('active');
+                btnEn.classList.remove('active');
+            } else if (lang === 'en') {
+                contentRu.style.display = 'none';
+                contentEn.style.display = 'block';
+                btnEn.classList.add('active');
+                btnRu.classList.remove('active');
+            }
+        }
+    </script>
+
 
 </body>
 </html>
