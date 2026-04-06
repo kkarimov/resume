@@ -31,8 +31,32 @@
         border-color: #333;
     }
     
-    /* Скрываем английскую версию по умолчанию */
-    #content-ru {
+/* Стили для верхней панели управления */
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .switcher-btn {
+        cursor: pointer;
+        padding: 6px 14px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        font-size: 13px;
+        border-radius: 4px;
+        transition: 0.2s;
+        font-family: inherit;
+    }
+    .switcher-btn:hover { background-color: #e0e0e0; }
+    .switcher-btn.active { background-color: #333; color: #fff; border-color: #333; }
+    .lang-controls .switcher-btn { margin-left: 5px; }
+    .doc-controls .switcher-btn { margin-right: 5px; }
+
+    /* Скрываем английское резюме и Teaching Statement по умолчанию */
+    #content-ru, #content-teaching {
         display: none; 
     }
 
@@ -197,10 +221,16 @@
 </head>
 <body>
 
-    <!-- Переключатель -->
-    <div class="lang-switcher">
-        <button id="btn-ru" class="active" onclick="setLang('ru')">RU</button>
-        <button id="btn-en" onclick="setLang('en')">EN</button>
+<!-- Верхняя панель управления -->
+    <div class="top-bar">
+        <div class="doc-controls">
+            <button id="btn-doc-resume" class="switcher-btn active" onclick="setDoc('resume')">Resume</button>
+            <button id="btn-doc-teaching" class="switcher-btn" onclick="setDoc('teaching')">Teaching Statement</button>
+        </div>
+<div class="lang-controls" id="lang-controls">
+            <button id="btn-ru" class="switcher-btn" onclick="setLang('ru')">RU</button>
+            <button id="btn-en" class="switcher-btn active" onclick="setLang('en')">EN</button>
+        </div>
     </div>
 
     <!-- РУССКАЯ ВЕРСИЯ (по умолчанию видима) -->
@@ -850,14 +880,64 @@
         
         
     </div>
+    
+<!-- ТЕКСТ TEACHING STATEMENT (по умолчанию скрыт) -->
+    <div id="content-teaching">
+        <header>
+            <h1>TEACHING STATEMENT</h1>
+            <div class="roles">Karim Salta (Karimov), Ph.D.</div>
+        <div class="contact-info">
+            kkarimov@gmail.com | Fort Collins, CO | Open to relocation<br>
+            Resume: <a href="https://kkarimov.github.io/resume/" target="_blank">kkarimov.github.io/resume</a><br>
+            <a href="https://www.linkedin.com/in/karim-karimov-b47052206/" target="_blank">LinkedIn</a> | 
+            <a href="https://x.com/KarimSalta" target="_blank">X (Twitter) |</a>
+            <a href="https://scholar.google.com/citations?user=fA1uKokAAAAJ&hl=en" target="_blank">Google Scholar</a> | 
+            <a href="https://github.com/kkarimov" target="_blank">GitHub</a> | 
+            <a href="https://www.cryptotube.app/" target="_blank">Latest Project</a>
+        </div>
+        </header>
 
-    <!-- Скрипт переключения (разместите перед закрывающим тегом </body>) -->
+        <section>
+            <h2>Perspective</h2>
+            <p>I fundamentally believe that every student possesses the intrinsic talent required to master complex mathematical and computational concepts. When a student struggles, it is rarely a deficit of ability; rather, it is usually a misalignment of context, motivation, or instructional approach. As an educator, my primary goal is to bridge that gap. I am deeply invested in the classroom because I genuinely enjoy teaching and engaging with the energy and perspectives of young minds. To me, teaching is not just about transferring knowledge — it is about cultivating a student’s self-belief, understanding their unique context, and equipping them with the tools to tackle real-world problems.</p>
+        </section>
+
+        <section>
+            <h2>Empathy, Accessibility, and the English as a Second Language (ESL) Experience</h2>
+            <p>Abstract mathematics and machine learning can be intimidating subjects. To combat this, I prioritize being emotionally available and approachable, stepping away from the traditional, rigid academic persona to build a classroom rooted in psychological safety. I actively try to read the room, soliciting subtle, real-time feedback to ensure no one is left behind.</p>
+            <p>This empathy is deeply rooted in my own experiences. Having arrived at Colorado State University to tackle graduate-level mathematics while still learning to speak English, I know firsthand the specific hurdles international and ESL students face. I understand how missing just one unfamiliar term can derail a student’s comprehension of a 40-minute lecture, and I know how frustrating it can be to struggle to articulate your knowledge so that your performance is fully appreciated. Because I navigated those exact challenges, I am highly attuned to the diverse cultural, linguistic, and educational backgrounds of my students. I strive to make my communication as clear, accessible, and inclusive as possible.</p>
+        </section>
+
+        <section>
+            <h2>Curriculum Design, Collaboration, and Lecturing</h2>
+            <p>My pedagogical experience over the last two decades spans wide-ranging audiences and formats, extending far beyond leading standard problem-solving seminars. I frequently take an active role in lecturing and course management. For example, while teaching <span><a href="https://online.colostate.edu/courses/MATH/MATH340.dot" target="_blank">Ordinary Differential Equations</a></span>, I realized my students needed extra support grasping the core theoretical concepts. In response, I adapted my sessions to proactively lecture on the underlying theory alongside problem-solving, directly addressing their conceptual roadblocks.</p>
+            <p>Furthermore, I deeply value the collaborative aspect of education. This was particularly evident when our department fundamentally restructured the <span><a href="https://online.colostate.edu/courses/MATH/MATH155.dot" target="_blank">Calculus for Biological Scientists</a></span> course. Working alongside a newly appointed coordinator, the primary lecturer, and my fellow instructors, we collaboratively reshaped the course's direction. This required tight, ongoing coordination: we held weekly team meetings to review student progress, share on-the-ground feedback from our respective classrooms, and plan upcoming modules. Together, we designed assignments, formulated and graded exams, and worked as a unit to establish and logically justify fair curving policies across all cohorts. We also organized extra support initiatives outside of regular class hours, including special evening workshops, one of which I led.</p>
+        </section>
+
+        <section>
+            <h2>Adaptability Through Crisis</h2>
+            <p>My commitment to student success and flexible course management was thoroughly tested during the COVID-19 pandemic. Navigating the sudden, uncertain shifts in educational delivery required creative problem-solving and deep resilience. I worked hard to fluently transition my courses between live, hybrid, and fully remote formats. I adapted our testing methods for remote proctoring and grading, constantly communicating with students and colleagues to maintain both academic rigor and a sense of community during a highly disruptive time.</p>
+        </section>
+
+        <section>
+            <h2>Connecting Theory to Practice ("Ground-Up" Learning)</h2>
+            <p>Finally, in my machine learning research, my lab utilized a "ground-up" approach — prioritizing interpretability by building complex algorithms entirely from scratch. I bring this exact philosophy into my teaching. Because of my extensive industry and research background — ranging from DARPA-funded projects to building full-stack ML applications — I constantly contextualize theoretical mathematics with real-world applications. When students see how the Linear Algebra or Calculus they are learning directly powers the neural networks and technologies they use every day, the material comes alive.</p>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>Ultimately, my measure of success as a teacher is not just in how well my students perform on an exam, but in how their confidence grows throughout the semester. By combining a deep, practical expertise in Applied Mathematics and AI with an empathetic, culturally responsive, and highly adaptable teaching style, I strive to develop students who are not only technically proficient but who possess the self-assurance to become the next generation of innovative problem solvers.</p>
+        </section>
+    </div>
+
+<!-- Скрипт переключения (разместите перед закрывающим тегом </body>) -->
     <script>
+        let currentLang = 'en'; // Запоминаем текущий язык
+
         function setLang(lang) {
-            // Элементы контента
+            currentLang = lang;
             const contentRu = document.getElementById('content-ru');
             const contentEn = document.getElementById('content-en');
-            // Кнопки
             const btnRu = document.getElementById('btn-ru');
             const btnEn = document.getElementById('btn-en');
 
@@ -871,6 +951,41 @@
                 contentEn.style.display = 'block';
                 btnEn.classList.add('active');
                 btnRu.classList.remove('active');
+            }
+        }
+
+        function setDoc(docType) {
+            const contentRu = document.getElementById('content-ru');
+            const contentEn = document.getElementById('content-en');
+            const contentTeaching = document.getElementById('content-teaching');
+            
+            const btnResume = document.getElementById('btn-doc-resume');
+            const btnTeaching = document.getElementById('btn-doc-teaching');
+            const langControls = document.getElementById('lang-controls');
+
+            if (docType === 'resume') {
+                // Активируем кнопку Резюме
+                btnResume.classList.add('active');
+                btnTeaching.classList.remove('active');
+                
+                // Показываем переключатель языков
+                langControls.style.display = 'block'; 
+                contentTeaching.style.display = 'none';
+                
+                // Восстанавливаем отображение резюме на выбранном языке
+                setLang(currentLang);
+            } else if (docType === 'teaching') {
+                // Активируем кнопку Teaching Statement
+                btnTeaching.classList.add('active');
+                btnResume.classList.remove('active');
+                
+                // Скрываем переключатель языков (так как текст только на EN)
+                langControls.style.display = 'none'; 
+                
+                // Скрываем оба резюме и показываем Teaching Statement
+                contentRu.style.display = 'none';
+                contentEn.style.display = 'none';
+                contentTeaching.style.display = 'block';
             }
         }
     </script>
