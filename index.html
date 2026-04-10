@@ -55,8 +55,8 @@
     .lang-controls .switcher-btn { margin-left: 5px; }
     .doc-controls .switcher-btn { margin-right: 5px; }
 
-    /* Скрываем английское резюме и Teaching Statement по умолчанию */
-    #content-ru, #content-teaching {
+    /* Скрываем русское резюме и Teaching and Research Statements по умолчанию */
+    #content-ru, #content-teaching, #content-research {
         display: none; 
     }
 
@@ -226,6 +226,7 @@
         <div class="doc-controls">
             <button id="btn-doc-resume" class="switcher-btn active" onclick="setDoc('resume')">Resume</button>
             <button id="btn-doc-teaching" class="switcher-btn" onclick="setDoc('teaching')">Teaching Statement</button>
+            <button id="btn-doc-research" class="switcher-btn" onclick="setDoc('research')">Research Statement</button>
         </div>
 <div class="lang-controls" id="lang-controls">
             <button id="btn-ru" class="switcher-btn" onclick="setLang('ru')">RU</button>
@@ -929,6 +930,45 @@
             <p>Ultimately, my measure of success as a teacher is not just in how well my students perform on an exam, but in how their confidence grows throughout the semester. By combining a deep, practical expertise in Applied Mathematics and AI with an empathetic, culturally responsive, and highly adaptable teaching style, I strive to develop students who are not only technically proficient but who possess the self-assurance to become the next generation of innovative problem solvers.</p>
         </section>
     </div>
+    
+<!-- ТЕКСТ RESEARCH STATEMENT (по умолчанию скрыт) -->
+    <div id="content-research">
+        <header>
+            <h1>RESEARCH STATEMENT</h1>
+            <div class="roles">Karim Salta (Karimov), Ph.D.</div>
+        <div class="contact-info">
+            kkarimov@gmail.com | Fort Collins, CO | Open to relocation<br>
+            Resume: <a href="https://kkarimov.github.io/resume/" target="_blank">kkarimov.github.io/resume</a><br>
+            <a href="https://www.linkedin.com/in/karim-karimov-b47052206/" target="_blank">LinkedIn</a> | 
+            <a href="https://x.com/KarimSalta" target="_blank">X (Twitter) |</a>
+            <a href="https://scholar.google.com/citations?user=fA1uKokAAAAJ&hl=en" target="_blank">Google Scholar</a> | 
+            <a href="https://github.com/kkarimov" target="_blank">GitHub</a> | 
+            <a href="https://www.cryptotube.app/" target="_blank">Latest Project</a>
+        </div>
+        </header>
+
+        <section>
+            <p>My research develops mathematical foundations and algorithms for analyzing high-dimensional structured data. I work at the interface of differential geometry, optimization theory, and machine learning, focusing on problems where data naturally reside on non-Euclidean spaces. My approach combines rigorous geometric analysis with practical algorithmic implementation, motivated by the need for interpretable and scalable methods in scientific domains where data heterogeneity and high dimensionality present fundamental challenges.</p>
+        </section>
+
+        <section>
+            <p>A distinctive aspect of my research perspective is the conviction that true understanding requires implementation from scratch. Mathematical abstraction and practical application are not opposing forces but complementary strengths. In my Pattern Analysis Lab, I coded implementations of LSTMs, CNNs, autoencoders, and classical methods (PCA, k-means, LDA, SVMs, etc.) entirely from mathematical descriptions, bypassing high-level APIs. My track record demonstrates the ability to quickly master new mathematical frameworks and translate them into working code, and I have found substantial value in bridging theoretical concepts and practical implementation through cross-functional collaborations (DARPA, NSF, and industry partnerships).</p>
+        </section>
+        
+        <section>
+            <p>This "ground-up" philosophy emerged from my training in physics at Moscow State University and in applied mathematics at Colorado State University. Whether developing neural subnetworks that operate on abstract manifolds or designing biomarker selection algorithms for high-dimensional genomics, I begin by understanding the underlying geometric and algebraic structures of data. Only then do I construct learning systems that respect these intrinsic geometries.</p>
+        </section>
+
+        <section>
+            <p>I am drawn to methods where mathematical constraints provide transparency by design—hierarchical representations, geometric regularization, optimization landscapes with favorable properties—rather than post-hoc explanation techniques. As AI becomes increasingly central to scientific discovery, the need for researchers who can navigate both the abstract heights of mathematical theory and the practical demands of implementation has never been greater. I aim to foster a research environment where mathematical rigor drives innovation, where we build from the ground up, and where understanding remains the ultimate metric of progress.</p>
+        </section>
+        
+        <section>
+            <p>While my background emphasizes geometric deep learning and high-dimensional data, I view these as starting points rather than constraints. I am actively eager to pivot toward emerging challenges at the intersection of applied mathematics and AI. My hybrid perspective combines the mathematical training to develop novel algorithms on manifolds and abstract spaces with the engineering capability to deploy them at scale. I am excited by the prospect of mentoring students who share this dual enthusiasm for mathematical depth and practical implementation.</p>
+        </section>
+        
+    </div>
+
 
 <!-- Скрипт переключения (разместите перед закрывающим тегом </body>) -->
     <script>
@@ -958,19 +998,23 @@
             const contentRu = document.getElementById('content-ru');
             const contentEn = document.getElementById('content-en');
             const contentTeaching = document.getElementById('content-teaching');
+            const contentResearch = document.getElementById('content-research');
             
             const btnResume = document.getElementById('btn-doc-resume');
             const btnTeaching = document.getElementById('btn-doc-teaching');
+            const btnResearch = document.getElementById('btn-doc-research');
             const langControls = document.getElementById('lang-controls');
 
             if (docType === 'resume') {
                 // Активируем кнопку Резюме
                 btnResume.classList.add('active');
                 btnTeaching.classList.remove('active');
+                btnResearch.classList.remove('active');
                 
                 // Показываем переключатель языков
                 langControls.style.display = 'block'; 
                 contentTeaching.style.display = 'none';
+                contentResearch.style.display = 'none';
                 
                 // Восстанавливаем отображение резюме на выбранном языке
                 setLang(currentLang);
@@ -978,6 +1022,7 @@
                 // Активируем кнопку Teaching Statement
                 btnTeaching.classList.add('active');
                 btnResume.classList.remove('active');
+                btnResearch.classList.remove('active');
                 
                 // Скрываем переключатель языков (так как текст только на EN)
                 langControls.style.display = 'none'; 
@@ -985,7 +1030,23 @@
                 // Скрываем оба резюме и показываем Teaching Statement
                 contentRu.style.display = 'none';
                 contentEn.style.display = 'none';
+                contentResearch.style.display = 'none';
                 contentTeaching.style.display = 'block';
+            } else if (docType === 'research') {
+                // Активируем кнопку Research Statement
+                btnResearch.classList.add('active');
+                btnResume.classList.remove('active');
+                btnTeaching.classList.remove('active');
+                
+                
+                // Скрываем переключатель языков (так как текст только на EN)
+                langControls.style.display = 'none'; 
+                
+                // Скрываем оба резюме и показываем Teaching Statement
+                contentRu.style.display = 'none';
+                contentEn.style.display = 'none';
+                contentTeaching.style.display = 'none';
+                contentResearch.style.display = 'block';
             }
         }
     </script>
